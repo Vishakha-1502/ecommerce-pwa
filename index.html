@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ecommerce PWA</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Manifest -->
+  <link rel="manifest" href="manifest.json">
+</head>
+
+<body>
+
+  <h1>My Ecommerce Store</h1>
+
+  <div class="product-container">
+
+    <div class="card">
+      <img src="images/product1.jpg" alt="Product 1">
+      <h2>Product 1</h2>
+      <p>₹500</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <img src="images/product2.jpg" alt="Product 2">
+      <h2>Product 2</h2>
+      <p>₹800</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+      .then(() => console.log("Service Worker Registered"));
+    }
+  </script>
+
+</body>
+</html>
